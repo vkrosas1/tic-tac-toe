@@ -1,7 +1,8 @@
 import { React } from "react";
 import Square from "./square.js";
+import "../styles/Board.css";
 
-function Board({ xIsNext, squares, onPlay }) {
+function Board({ xIsNext, squares, onPlay, onWinnerUpdate }) {
   function handleClick(i) {
     if (calculateWinner(squares) || squares[i]) {
       return;
@@ -19,7 +20,7 @@ function Board({ xIsNext, squares, onPlay }) {
   let status;
   if (winner) {
     status = "Winner: " + winner;
-    //onUpdateWinner(winner);
+    onWinnerUpdate(status);
   } else {
     status = "Next player: " + (xIsNext ? "X" : "O");
   }

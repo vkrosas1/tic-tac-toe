@@ -1,0 +1,5 @@
+.board-row {
+    display: grid;
+    grid-template-columns: 0fr 0fr 0fr;
+    column-gap: 0px;
+}
